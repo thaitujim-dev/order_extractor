@@ -1,0 +1,58 @@
+{
+    "manifest_version": 2,
+    "name": "Amazon order extractor",
+    "description": "This extension shows a extaction for amazon order",
+    "version": "1.0",
+    "icons": {
+        "16": "default_icon.png"
+    },
+    "permissions": [
+        "storage",
+        "activeTab",
+        "tabs",
+        "declarativeContent",
+        "<all_urls>"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.amazon.com/gp/your-account/order-details*"
+            ],
+            "js": [
+                "jquery-3.4.1.min.js",
+                "script/brand_const.js",
+                "script/script_amz.js"
+            ],
+            "css": [
+                "main.css"
+            ]
+        },
+        {
+            "matches": [
+                "https://www.jomashop.com/my-account/orders/view/*"
+            ],
+            "js": [
+                "jquery-3.4.1.min.js",
+                "script/brand_const.js",
+                "script/script_joma.js"
+            ],
+            "css": [
+                "main.css"
+            ]
+        },
+        {
+            "matches": [
+                "https://www.ashford.com/sales/order/history/",
+                "https://www.ashford.com/sales/order/view/order_id/*"
+            ],
+            "js": [
+                "jquery-3.4.1.min.js",
+                "script/brand_const.js",
+                "script/script_ashford.js"
+            ],
+            "css": [
+                "main.css"
+            ]
+        }
+    ]
+}
